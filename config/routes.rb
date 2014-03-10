@@ -1,4 +1,10 @@
 TestApp::Application.routes.draw do
+  get "sessions/new"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "players#new", :as => "sign_up"
+  root :to => "users#new"
+
+  resources :sessions
   resources :players
 
   # The priority is based upon order of creation: first created -> highest priority.
