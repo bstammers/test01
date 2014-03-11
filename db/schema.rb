@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310041811) do
+ActiveRecord::Schema.define(version: 20140310231556) do
 
   create_table "players", force: true do |t|
     t.string   "first_name"
@@ -29,5 +29,13 @@ ActiveRecord::Schema.define(version: 20140310041811) do
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true
   add_index "players", ["username"], name: "index_players_on_username", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

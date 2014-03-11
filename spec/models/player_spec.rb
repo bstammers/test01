@@ -18,7 +18,6 @@ describe Player do
 	it "is invalid without a first name" do
 		@player.first_name = nil
 		@player.should_not be_valid
-	#	FactoryGirl.build(:player, first_name: nil).should_not be_valid
 	end
 	it "is invalid without a last name" do
 		FactoryGirl.build(:player, last_name: nil).should_not be_valid
