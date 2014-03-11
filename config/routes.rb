@@ -8,8 +8,6 @@ TestApp::Application.routes.draw do
   #resources :sessions
   #resources :players
 
-  get "sign_up" => "users#new", :as => "sign_up"
-  root :to => "users#new"
   resources :users
 
 
