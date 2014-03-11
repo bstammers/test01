@@ -89,8 +89,8 @@ Team page	- shows team details, including logo/images/
 
 TO DO
 
-1.	Create player model
-2.	Define validations:  unique username, unique email address, user name, first name, last name, email, password all mandatory.
+1.	Create player model  --  DONE
+2.	Define validations:  unique username, unique email address, user name, first name, last name, email, password all mandatory.  --  DONE
 3.	Define authentication process.
 4.	Set up player registration form
 5.	Set up player profile display.
