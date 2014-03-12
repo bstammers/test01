@@ -8,8 +8,8 @@ TestApp::Application.routes.draw do
   #resources :sessions
   #resources :players
 
-  resources :users
-
+  resources :players
+  match '/register', to: 'players#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

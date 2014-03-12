@@ -91,10 +91,14 @@ TO DO
 
 1.	Create player model  --  DONE
 2.	Define validations:  unique username, unique email address, user name, first name, last name, email, password all mandatory.  --  DONE
-3.	Define authentication process.
-4.	Set up player registration form
-5.	Set up player profile display.
-6.	Set up player dashboard view, including player profile section
+3.	Set up player registration form -- DONE
+4.	Define authentication process.
+   a) create Session objects
+   b) set up sign in page
+   c) define tests for sign in success and failure
+5.	Set up player dashboard view, including player profile section
+   a) add link to player profile
+6.	Set up player profile display.
 7.	Create competition model
 8.	Define validations: unique competition name (incl season as part), unique divisions, mandatory name, divisions.
 9.	Create team model
