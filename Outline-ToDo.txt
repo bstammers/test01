@@ -92,9 +92,9 @@ TO DO
 1.	Create player model  --  DONE
 2.	Define validations:  unique username, unique email address, user name, first name, last name, email, password all mandatory.  --  DONE
 3.	Set up player registration form -- DONE
-4.	Define authentication process.
-   a) create Session objects
-   b) set up sign in page
+4.	Define authentication process. -- DONE
+   a) create Session objects  --DONE
+   b) set up sign in page     --DONE
    c) define tests for sign in success and failure
 5.	Set up player dashboard view, including player profile section
    a) add link to player profile
