@@ -8,7 +8,7 @@ gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'foundation-rails'
 gem 'gumby-rails'
 gem 'bcrypt-ruby', '3.1.2'
@@ -36,13 +36,14 @@ group :development, :test do
 #	gem 'guard-rspec', '2.5.0'
 #	gem 'spork-rails', '4.0.0'
 #	gem 'guard-spork', '1.5.1'
+	gem 'capybara', '2.1.0'
 	gem 'factory_girl_rails', '4.2.1'
 end
 
 group :test do
 	gem 'faker'
 	gem 'selenium-webdriver', '2.35.1'
-	gem 'capybara', '2.1.0'
+#	gem 'capybara', '2.1.0'
 	gem 'guard-rspec'
 	gem 'launchy'
 end

@@ -11,23 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310041811) do
+ActiveRecord::Schema.define(version: 20140314052843) do
 
   create_table "players", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "mobile"
-    t.string   "email"
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "username"
+    t.string   "email"
     t.string   "password_digest"
-    t.string   "avatar_url"
-    t.boolean  "site_admin"
-    t.boolean  "team_manager"
+    t.string   "phone"
+    t.string   "avatar"
+    t.boolean  "adminflag"
+    t.boolean  "managerflag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true
+  add_index "players", ["remember_token"], name: "index_players_on_remember_token"
   add_index "players", ["username"], name: "index_players_on_username", unique: true
 
 end

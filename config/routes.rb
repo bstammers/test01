@@ -1,11 +1,19 @@
 TestApp::Application.routes.draw do
-  get "sessions/new"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sign_up" => "players#new", :as => "sign_up"
-  root :to => "users#new"
+  #get "users/new"
+  #get "sessions/new"
+  #get "log_in" => "sessions#new", :as => "log_in"
+  #get "sign_up" => "players#new", :as => "sign_up"
+  #root :to => "users#new"
 
-  resources :sessions
+  #resources :sessions
+  #resources :players
+
   resources :players
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/register', to: 'players#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  root 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
