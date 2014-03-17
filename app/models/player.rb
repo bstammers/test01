@@ -1,24 +1,20 @@
 class Player < ActiveRecord::Base
-	attr_accessor :password, :password_confirmation
-	validates :first_name, :last_name, :email, :username, presence: true
-	validates :email, :username, uniqueness: true
-
+	before_create :create_remember_token
 	has_secure_password
-#	validates_confirmation_of :password
-#	validates_presence_of :password, :on => :create
+	validates :password, presence: { on: :create }
+	validates :email, :username, uniqueness: true
+	validates :username, uniqueness: true
+	validates :firstname, :lastname, :email, :username, presence: true
 
-#	def encrypt_password
-#		if password.present?
-#			self.password_digest = BCrypt::Engine.hash_secret(password, password_digest)
-#		end
-#	end
+	def Player.new_remember_token
+		SecureRandom.urlsafe_base64
+	end
+	def Player.hash(token)
+		Digest::SHA1.hexdigest(token.to_s)
+	end
 
-#	def self.authenticate(email, password)
-#		player = find_by_email(email)
-#		if player && player.password_digest == BCrypt::Engine.hash_secret(password, player.password_digest)
-#			player
-#		else
-#			nil
-#		end
-#	end
+	private
+		def create_remember_token
+			self.remember_token = Player.hash(Player.new_remember_token)
+		end
 end

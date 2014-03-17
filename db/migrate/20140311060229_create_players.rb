@@ -1,15 +1,15 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :mobile
-      t.string :email
+      t.string :firstname
+      t.string :lastname
       t.string :username
+      t.string :email
       t.string :password_digest
-      t.string :avatar_url
-      t.boolean :site_admin
-      t.boolean :team_manager
+      t.string :phone
+      t.string :avatar
+      t.boolean :adminflag
+      t.boolean :managerflag
 
       t.timestamps
     end

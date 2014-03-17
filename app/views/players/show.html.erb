@@ -1,24 +1,46 @@
-<p id="notice"><%= notice %></p>
+<h2>Welcome <%= @player.firstname %>!</h2>
 
-<p>
-  <strong>First name:</strong>
-  <%= @player.first_name %>
-</p>
+<!--
 
-<p>
-  <strong>Last name:</strong>
-  <%= @player.last_name %>
-</p>
+		DASHBOARD 	- list competitions, last fixture, result									PROFILE  -  basic information, including avatar
+								- link to open team and competition pages										-  button to edit
 
-<p>
-  <strong>Email:</strong>
-  <%= @player.email %>
-</p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @player.password_digest %>
-</p>
+		MESSAGE BOARD  -  messages received from team, from competition admin, from individual players
+										- receive match time messages
+										- ability to send message to team, individual player, comp admin.
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+	-->
+
+<table width="100%" style="border: 1px solid black; border-collapse: collapse;">
+	<tr>
+		<td width="79%">
+			<table width="100%" style="border: 1px solid blue; border-collapse: collapse;">
+				<tr  style="border: 1px solid black; border-collapse: collapse;"><td><%= @player.firstname %>'s Dashboard</td></tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;</td></tr>
+			</table>
+		</td>
+		<td width="2%"></td>
+		<td width="19%">
+			<table width="100%" style="border: 1px solid red; border-collapse: collapse">
+				<tr style="border: 1px solid black; border-collapse: collapse;"><td><%= @player.firstname %>'s Profile</td></tr>
+				<tr><td><%= @player.firstname %> <%= @player.lastname %></td></tr>
+				<tr><td><%= @player.email %></td></tr>
+				<tr><td><%= @player.username %></td></tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr><td>&nbsp;<%= link_to 'Edit Profile', edit_player_path %></td></tr>
+			</table>
+		</td>
+	</tr>
+	<tr><td colspan=3>&nbsp;</td></tr>
+	<tr><td colspan=3>&nbsp;</td></tr>
+	<tr><td colspan=3>&nbsp;</td></tr>
+	<tr style="border: 1px solid green; border-collapse: collapse;"><td colspan=3><%= @player.firstname %>'s Message Board</td></tr>
+	<tr style="border: 1px solid green; border-collapse: collapse;"><td colspan=3>&nbsp;</td></tr>
+	<tr style="border: 1px solid green; border-collapse: collapse;"><td colspan=3>&nbsp;</td></tr>
+	<tr style="border: 1px solid green; border-collapse: collapse;"><td colspan=3>&nbsp;</td></tr>
+</table>
