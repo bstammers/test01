@@ -5,6 +5,7 @@ class Player < ActiveRecord::Base
 	validates :email, :username, uniqueness: true
 	validates :username, uniqueness: true
 	validates :firstname, :lastname, :email, :username, presence: true
+	belongs_to :team
 
 	def Player.new_remember_token
 		SecureRandom.urlsafe_base64

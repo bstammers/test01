@@ -1,4 +1,10 @@
 TestApp::Application.routes.draw do
+  resources :teams
+
+  resources :divisions
+
+  resources :competitions
+
   #get "users/new"
   #get "sessions/new"
   #get "log_in" => "sessions#new", :as => "log_in"

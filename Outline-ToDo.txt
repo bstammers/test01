@@ -37,10 +37,16 @@ Competition	- competition name
 		- points %age flag (record points %age)
 		- sets %age (record sets %age)
 		- MVP flag (record MVP points)
+	- competition has many divisions
 	- competition has many teams
 	- competition has many persons
-	- competition displays ladders by division, sorted ascending by competition points/sets %age/points %age (depending on option selected)
+	-  competition displays ladders by division, sorted ascending by competition points/sets %age/points %age (depending on option selected)
 	- if MVP option is selected, MVP is recorded against each match
+
+Division 	- division name
+				- teams
+	 - division has many teams
+
 
 Match		- round no
 		- round date
@@ -96,11 +102,13 @@ TO DO
    a) create Session objects  --DONE
    b) set up sign in page     --DONE
    c) define tests for sign in success and failure  -- POSTPONE
-5.	Set up player dashboard view, including player profile section
-   a) add link to player profile
+5.	Set up player dashboard view, including player profile section  --  NEEDS WORK
+   a) add link to player profile  --  BASIC EDIT LINK
 6.	Set up player profile display.
-7.	Create competition model
-8.	Define validations: unique competition name (incl season as part), unique divisions, mandatory name, divisions.
+7.	Create competition model  --  DONE
+7.	Create division model  --  DONE
+8.	Define validations: unique competition name (incl season as part), unique divisions, mandatory name, divisions.  -- DONE
 9.	Create team model
 10.	Define validations: unique team name, mandatory team name, competition, division.
-11.	Build tests for integration of these 3 models and verify.
+11.	Build tests for integration of these 3 models and verify.  --  POSTPONE
+12.  Add associations between models.

@@ -1,0 +1,49 @@
+<h1>Listing teams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manager</th>
+      <th>Played</th>
+      <th>Won</th>
+      <th>Drawn</th>
+      <th>Set won</th>
+      <th>Set lost</th>
+      <th>Points for</th>
+      <th>Points against</th>
+      <th>Sets percent</th>
+      <th>Points percent</th>
+      <th>Comp points</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.manager %></td>
+        <td><%= team.played %></td>
+        <td><%= team.won %></td>
+        <td><%= team.drawn %></td>
+        <td><%= team.set_won %></td>
+        <td><%= team.set_lost %></td>
+        <td><%= team.points_for %></td>
+        <td><%= team.points_against %></td>
+        <td><%= team.sets_percent %></td>
+        <td><%= team.points_percent %></td>
+        <td><%= team.comp_points %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path %>
